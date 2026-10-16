@@ -111,10 +111,10 @@ const Step4Details = () => {
                 <button
                     onClick={submitForm}
                     disabled={!isValid || isSubmitting}
-                    className={`flex-1 py-3 px-4 rounded-lg font-semibold text-white transition-all shadow-md flex items-center justify-center gap-2
+                    className={`flex-1 py-3 px-4 rounded-lg font-semibold transition-all shadow-md flex items-center justify-center gap-2
                         ${isValid && !isSubmitting
-                            ? 'bg-hospital-blue-600 hover:bg-hospital-blue-700 hover:shadow-lg translate-y-0 active:translate-y-0.5'
-                            : 'bg-gray-400 cursor-not-allowed'}`}
+                            ? 'bg-[#22c55e] hover:bg-[#16a34a] text-white hover:shadow-lg translate-y-0 active:translate-y-0.5'
+                            : 'bg-[#e5e7eb] text-[#6b7280] cursor-not-allowed'}`}
                 >
                     {isSubmitting ? (
                         <>

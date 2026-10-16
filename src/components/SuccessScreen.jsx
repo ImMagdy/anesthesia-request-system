@@ -21,7 +21,7 @@ const SuccessScreen = () => {
             <div className="pt-6 w-full max-w-xs">
                 <button
                     onClick={resetForm}
-                    className="w-full py-4 px-6 rounded-xl bg-hospital-blue-600 text-white font-semibold hover:bg-hospital-blue-700 transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                    className="w-full py-4 px-6 rounded-xl bg-[#0284c7] text-white font-semibold hover:bg-[#0369a1] transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
                 >
                     <RotateCcw className="w-5 h-5" />
                     Submit New Request

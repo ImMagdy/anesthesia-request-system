@@ -42,9 +42,9 @@ const Step2Resident = () => {
                             className="w-full pl-10 p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-hospital-blue-500 focus:border-hospital-blue-500 outline-none bg-white"
                         >
                             <option value="">-- Select Year --</option>
-                            <option value="2021">2021</option>
                             <option value="2022">2022</option>
                             <option value="2023">2023</option>
+                            <option value="2024">2024</option>
                         </select>
                     </div>
                 </div>
@@ -77,8 +77,10 @@ const Step2Resident = () => {
                 <button
                     onClick={nextStep}
                     disabled={!isValid}
-                    className={`flex-1 py-3 px-4 rounded-lg font-medium text-white transition-colors
-                        ${isValid ? 'bg-hospital-blue-600 hover:bg-hospital-blue-700' : 'bg-gray-300 cursor-not-allowed'}`}
+                    className={`flex-1 py-3 px-4 rounded-lg font-medium transition-all shadow-sm
+                        ${isValid
+                            ? 'bg-[#22c55e] hover:bg-[#16a34a] text-white shadow-md'
+                            : 'bg-[#e5e7eb] text-[#6b7280] cursor-not-allowed'}`}
                 >
                     Next Step
                 </button>

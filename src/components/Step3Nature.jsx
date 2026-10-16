@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from '../context/FormContext';
-import { BriefcaseMedical, Stethoscope, HeartPulse, BookOpen, Bike, FileText } from 'lucide-react';
+import { BriefcaseMedical, Stethoscope, HeartPulse, BookOpen, Bike, FileText, Heart } from 'lucide-react';
 
 const Step3Nature = () => {
     const { formData, updateFormData, nextStep, prevStep } = useForm();
@@ -13,6 +13,7 @@ const Step3Nature = () => {
         { id: 'Study', label: 'Study / Exam', sub: 'Preparation', icon: BookOpen },
         { id: 'Military', label: 'Military Leave', sub: 'Paperwork / Service', icon: Bike }, // Bike as placeholder/metaphor for movement/service
         { id: 'Thesis', label: 'Thesis Defense', sub: 'Protocol / Defense', icon: FileText },
+        { id: 'Marriage', label: 'Getting Married/Engaged', sub: 'Personal celebration', icon: Heart },
     ];
 
     const handleSelect = (id) => {
@@ -60,8 +61,10 @@ const Step3Nature = () => {
                 <button
                     onClick={nextStep}
                     disabled={!requestType}
-                    className={`flex-1 py-3 px-4 rounded-lg font-medium text-white transition-colors
-                        ${requestType ? 'bg-hospital-blue-600 hover:bg-hospital-blue-700' : 'bg-gray-300 cursor-not-allowed'}`}
+                    className={`flex-1 py-3 px-4 rounded-lg font-medium transition-all shadow-sm
+                        ${requestType
+                            ? 'bg-[#22c55e] hover:bg-[#16a34a] text-white shadow-md'
+                            : 'bg-[#e5e7eb] text-[#6b7280] cursor-not-allowed'}`}
                 >
                     Next Step
                 </button>

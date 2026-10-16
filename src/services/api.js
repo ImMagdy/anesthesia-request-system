@@ -1,40 +1,45 @@
 // services/api.js
 
 // TODO: Replace with actual Google Apps Script Web App URL
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyJRrMKCHnhriOAt-RcDMAn6II4yhPiPtEUICBI5VWHccHMJlWuNUNxAzIYDBO5TFgp/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyykOVa3QXncU20N8drqk4VyOOEY2SnZHVJ3NmCHKL2CiT-eYTUQD8txfssLrZjxA5x/exec";
 
 /**
  * Fetches lists of active theaters and seniors from the Google Sheet.
  * @returns {Promise<{theaters: string[], seniors: string[]}>}
  */
 export const fetchLists = async () => {
-    try {
-        // Mock data for development if URL is placeholder
-        if (GOOGLE_SCRIPT_URL === "PLACEHOLDER_URL") {
-            // Simulate network delay
-            await new Promise(resolve => setTimeout(resolve, 800));
-            return {
-                theaters: [
-                    "Main Theater 1", "Main Theater 2",
-                    "Obs/Gyn Theater", "Ortho Theater", "Neuro Theater",
-                    "Remote: Cath Lab", "Remote: MRI", "Remote: ECT"
-                ],
-                seniors: [
-                    "Dr. Ahmed Ali", "Dr. Sarah Smith", "Dr. Mohamed Ezzat",
-                    "Dr. Hoda Nabil", "Dr. Khaled Omar", "Dr. Mona Lisa"
-                ]
-            };
-        }
-
-        const response = await fetch(GOOGLE_SCRIPT_URL);
-        if (!response.ok) throw new Error('Network response was not ok');
-        const data = await response.json();
-        return data; // Expected format: { theaters: [...], seniors: [...] }
-    } catch (error) {
-        console.error("Failed to fetch lists:", error);
-        // Fallback or re-throw depending on desired behavior
-        return { theaters: [], seniors: [] };
-    }
+    // Hardcoded to ensure dropdowns always load instantly and avoid Google Script CORS errors
+    return {
+        theaters: [
+            "Mogam3a",
+            "Ob/Gyn",
+            "Pediatric Surgery",
+            "Endoscopy",
+            "Burns Operation",
+            "Burns ICU",
+            "RRT Internal Medicine",
+            "ICU A - Demerdash",
+            "ICU B - Demerdash",
+            "ICU C - Demerdash",
+            "ICU Ob/Gyn",
+            "Cardiothoracic ICU",
+            "ICU ER",
+            "ICU internal Medicine",
+            "ICU Hematology",
+            "ICU Stroke",
+            "ICU Geriatrics",
+            "ER",
+            "ASUSH",
+            "ASUSH - ICU A",
+            "ASUSH - ICU B",
+            "ASUSH - ICU C",
+            "ASUSH - Intermediate",
+            "Obour - Operations",
+            "Obour - ICU A",
+            "Obour - ICU B"
+        ],
+        seniors: []
+    };
 };
 
 /**

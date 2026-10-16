@@ -11,10 +11,7 @@ export const FormProvider = ({ children }) => {
     const [step, setStep] = useState(1);
     const [formData, setFormData] = useState({
         // Step 1
-        theaterCategory: '', // 'Main' | 'Other'
         theater: '',
-        seniorName: '',
-        isEmergency: false,
 
         // Step 2
         residentName: '',
@@ -83,10 +80,7 @@ export const FormProvider = ({ children }) => {
     const resetForm = () => {
         setStep(1);
         setFormData({
-            theaterCategory: '',
             theater: '',
-            seniorName: '',
-            isEmergency: false,
             residentName: '',
             residencyYear: '',
             mobileNumber: '',
